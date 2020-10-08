@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/editFilm}" th:object="${film}" method="post">
+    <input type="text" th:field="*{name}" th:placeholder="name">
+    <input type="date" th:field="*{creationDate}" th:placeholder="Date">
+    <input type="date" th:field="*{finishDate}" th:placeholder="Date">
+    <input type="submit" value="Edit">
+</form>
+</body>
+</html>

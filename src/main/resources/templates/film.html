@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a th:href="@{/addfilm}">Add film</a>
+
+    <div class="container">
+        <table class="container" border="1">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Creation date</th>
+                <th>Finish date</th>
+                <th>Delete film</th>
+                <th>Edit film</th>
+            </tr>
+            <tr th:each="project:${film}">
+                <td th:utext="${project.id}"></td>
+                <td th:utext="${project.name}"></td>
+                <td th:utext="${project.creationDate}"></td>
+                <td th:utext="${project.finishDate}"></td>
+                <td><a th:href="@{'/deletefilm/'+${project.id}}">Delete</a></td>
+                <td><a th:href="@{'/editFilm/'+${project.id}}">Edit</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
